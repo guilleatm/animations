@@ -91,8 +91,6 @@ Requires no parameters:
 
 ```Animation:restart()``` Restarts the animation, returns nothing.
 
-* **n_frame**: The frame (sprite) that the animation will mantain after stopped
-
 > If you stop and then start the animation, the animation will continue, if the last frame (sprite) was the second one, then when start, the next frame will be the third. If you stopped the animation passing as an argument some frame, when start, the frame will be the next.
 By restarting the animation you make sure that the animation starts from zero.
 
