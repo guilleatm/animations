@@ -136,7 +136,7 @@ animation:addCallback(5, function() print("I am called in the frame 5!!") end)
 ```lua
 -- main.lua
 
-require 'Animation'
+local Animation = require 'Animation'
 
 
 function love.load()

@@ -1,4 +1,4 @@
-Animation = {}
+local Animation = {}
 
 -- Image is an spritesheet with all the sprites in the same row
 function Animation:new(image_or_path, width, height, duration, loop, ox, oy)
@@ -14,7 +14,7 @@ function Animation:new(image_or_path, width, height, duration, loop, ox, oy)
 	a.duration = duration or 1
 	a.currentTime = 0
 	a.playing = false
-	a.previousFrame = 0 -- It is 0 only in the begining for checking the callbacks in all frame changes, including the firs one
+	a.previousFrame = 0 -- It is 0 only in the begining for checking the callbacks in all frame changes, including the first one
 	a.loop = loop or false
 	a.spriteSheet = image_or_path
 	a.quads = {}
@@ -134,7 +134,9 @@ function Animation:loadFromTable(path, data)
 	a.currentFrame = data.currentFrame
 	a.currentTime = data.currentTime
 	
-	--DO NOT SUPPORT CALLBACKS
+	--DO NOT SUPPORT CALLBACKS, YOU HAVE TO ADD THE CALLBACKS AFTER LOADING THE ANIMATION
 
 	return a
 end
+
+return Animation

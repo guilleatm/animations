@@ -1,10 +1,9 @@
 -- main.lua
 
-require 'Animation'
-
+local Animation = require 'Animation'
 
 function love.load()
-	love.graphics.setDefaultFilter("nearest", "nearest") -- Not necessary, it is for loading correctly pixelart images.
+	love.graphics.setDefaultFilter("nearest", "nearest") -- Not necessary, it is for scaling correctly pixelart images.
 
 	local img = love.graphics.newImage("oldHero.png") -- Sprite size --> 16 x 18
 	myAnimation = Animation:new(img, 16, 18, 0.5, true) -- The animation takes 0.5 seconds and loops until myAnimation:stop()
