@@ -91,27 +91,28 @@ function Animation:setScale(s)
 	self.scale = s
 end
 
-function Animation:load(path, w, h, duration, loop, engageSizeW, engageSizeH) -- ox, oy
-	local a = a or {}
+function Animation:load(id, w, h, duration, loop, engageSizeW, engageSizeH) -- ox, oy
 
-	assert(path, "ERROR: Animation:load(path, ...), path have to be a string")
+	assert(id, "ERROR: Animation:load(id, ...), id have to be a string")
 	
 	-- anim_w64h64d1l1s1
-	w = w or tonumber(path:match("(w%d+)"):sub(2))
-	h = h or tonumber(path:match("(h%d+)"):sub(2))
-	assert(w, h, "ERROR: Animation:load(path, w, h, ...), Requires a non nil width and height (the individual sprite size)")
+	w = w or tonumber(id:match("(w%d+)"):sub(2))
+	h = h or tonumber(id:match("(h%d+)"):sub(2))
+	assert(w, h, "ERROR: Animation:load(id, w, h, ...), Requires a non nil width and height (the individual sprite size)")
 	if not duration then
-		duration = path:match("(d%d+)")
+		duration = id:match("(d%d+)")
 		if duration then duration = tonumber(duration:sub(2)) else duration = 1 end
 	end
 	if loop == nil then
-		loop = path:match("(l%d+)")
-		if loop then loop = tonumber(loop:sub(2)) if loop == 0 then loop = false end else loop = false end
+		loop = id:match("(l%d+)")
+		if loop then loop = tonumber(loop:sub(2)) if loop == 1 then loop = true else loop = false end else loop = false end
 	end
-	--ox = ox or tonumber(path:match("(ox%d+)"):sub(3)) or nil -- IF YOU NEED TO USE THIS CODE IT AS ABOVE
-	--oy = oy or tonumber(path:match("(oy%d+)"):sub(3)) or nil
+	--ox = ox or tonumber(id:match("(ox%d+)"):sub(3)) or nil -- IF YOU NEED TO USE THIS CODE (OX and OY parameters), WRITE IT AS ABOVE
+	--oy = oy or tonumber(id:match("(oy%d+)"):sub(3)) or nil
 
-	local a = self:new(path, w, h, duration, loop, 0, 0) -- ox, oy -- #C true per loop
+	local a = self:new(id, w, h, duration, loop, 0, 0) -- ox, oy
+	if loop then a:start() end
+
 	
 	local scale
 	if engageSizeW then
