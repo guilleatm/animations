@@ -40,7 +40,7 @@ The library was made following the [Löve2D animation tutorial](https://love2d.o
 * **x_offet**: The x offset (default is the sprite_width / 2).
 * **y_offet**: The y offset (default is the sprite_height / 2).
 
-### Examples:
+### Creating an animation example:
 
 ```lua
 img = love.graphics.newImage("oldHero.png") -- Sprite size --> 16 x 18
