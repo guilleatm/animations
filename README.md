@@ -12,6 +12,22 @@ The library was made following the [Löve2D animation tutorial](https://love2d.o
 
 ## Functions
 
+| Methods	| Description				| Required parameters				| Returns		|
+| -:		| ------------------------------------- | --------------------------------------------- | --------------------- |
+| new()		| Creates a new animation (Constructor)	| image_or_path, sprite_width, sprite_height	| Animation		|
+| update()	| Updates the animation			| delta_time					| null (nothing)	|
+| draw()	| Draws the animation			| x_position, y_position			| null (nothing)	|
+| start()	| Starts the animation	(see more)	|						| null (nothing)	|
+| stop()	| Stops the animation (see more)	|						| null (nothing)	|
+| restart()	| Restarts the animation (from frame 0)	|						| null (nothing)	|
+| setScale()	| Sets the animation scale		| new_scale					| null (nothing)	|
+| addCallback()	| Adds a callback in the desired frame	| frame_index, function				| null (nothing)	|
+
+
+
+
+
+
 
 ## Creating an animation
 
