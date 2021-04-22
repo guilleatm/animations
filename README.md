@@ -1,15 +1,17 @@
-# Animation
+# Animations
 
 ## Description
 
-This is a small class for making animations in Löve2D, it comes with a few utilities. MIT License.  
-Give a star to the repo if you use the library :) and report any bug, thanks. I will fix the bugs and appreciate the stars.
-The code were not be tested so it can have bugs :o  
-[Löve2D animation tutorial](https://love2d.org/wiki/Tutorial:Animation)
+Create animations in Löve2d easily with this small library. Read the documentation for using the functionalities.
 
-> For using the class you have to have the Animation.lua file in your project folder and remember to use the require 'Animation' (with the correct path if the file is not with the main)
+The library was made following the [Löve2D animation tutorial](https://love2d.org/wiki/Tutorial:Animation).
+
+> Of course you have to add the file 'Animation.lua' in your project, remember to add the 'require' statement too.
 
 ---
+
+## Functions
+
 
 ## Creating an animation
 
